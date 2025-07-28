@@ -113,35 +113,39 @@
   <!-- Publications Section -->
   <section id="publications" class="section publications">
     <h2>Books & Publications</h2>
-    <div class="book-grid">
-      <div class="book-item">
-        <img src="prideandportrait.jpg" alt="Pride and Portrait Cover" />
-        <h3>Pride and Portrait: A Coloring Book Anthology Featuring the Art of Rebecca Coppock</h3>
-        <p><em>by JCLander Books</em></p>
-        <p>Paperback (Live since Jun 30, 2025) &ndash; $14.99 USD</p>
-        <p>ASIN: B0FG3DCR17 &ndash; <a href="https://www.amazon.com/dp/B0FG3DCR17" target="_blank">View on Amazon</a></p>
+    <div class="book-carousel">
+      <button class="carousel-btn prev">&#10094;</button>
+      <div class="carousel-track">
+        <div class="book-item">
+          <img src="prideandportrait.jpg" alt="Pride and Portrait Cover" />
+          <h3>Pride and Portrait: A Coloring Book Anthology Featuring the Art of Rebecca Coppock</h3>
+          <p><em>by JCLander Books</em></p>
+          <p>Paperback (Live since Jun 30, 2025) &ndash; $14.99 USD</p>
+          <p>ASIN: B0FG3DCR17 &ndash; <a href="https://www.amazon.com/dp/B0FG3DCR17" target="_blank">View on Amazon</a></p>
+        </div>
+        <div class="book-item">
+          <img src="emerson.jpg" alt="Emerson the Super Squirrel Cover" />
+          <h3>Emerson the Super Squirrel: A PBIS Coloring Adventure for Positive Behavior</h3>
+          <p><em>by Mr. Jordan Lander</em></p>
+          <p>Paperback (Live since Apr 21, 2025) &ndash; $7.99 USD</p>
+          <p>ASIN: B0F5Q5WVWM &ndash; <a href="https://www.amazon.com/dp/B0F5Q5WVWM" target="_blank">View on Amazon</a></p>
+        </div>
+        <div class="book-item">
+          <img src="strongwoman.jpg" alt="A Strong Woman Coloring Book Cover" />
+          <h3>A Strong Woman: Coloring Book</h3>
+          <p><em>by Jordan Charles Lander</em></p>
+          <p>Paperback (Live since Oct 9, 2024) &ndash; $12.99 USD</p>
+          <p>ASIN: B0DJRDPTJJ &ndash; <a href="https://www.amazon.com/dp/B0DJRDPTJJ" target="_blank">View on Amazon</a></p>
+        </div>
+        <div class="book-item">
+          <img src="passiveaggressive.jpg" alt="Passive-Aggressive Office Notes Cover" />
+          <h3>Passive-Aggressive Office Notes: The Funny and Relatable Adult Coloring Book</h3>
+          <p><em>by Jordan Charles Lander</em></p>
+          <p>Paperback (Live since May 15, 2023) &ndash; $7.99 USD</p>
+          <p>ASIN: B0C52216QY &ndash; <a href="https://www.amazon.com/dp/B0C52216QY" target="_blank">View on Amazon</a></p>
+        </div>
       </div>
-      <div class="book-item">
-        <img src="emerson.jpg" alt="Emerson the Super Squirrel Cover" />
-        <h3>Emerson the Super Squirrel: A PBIS Coloring Adventure for Positive Behavior</h3>
-        <p><em>by Mr. Jordan Lander</em></p>
-        <p>Paperback (Live since Apr 21, 2025) &ndash; $7.99 USD</p>
-        <p>ASIN: B0F5Q5WVWM &ndash; <a href="https://www.amazon.com/dp/B0F5Q5WVWM" target="_blank">View on Amazon</a></p>
-      </div>
-      <div class="book-item">
-        <img src="strongwoman.jpg" alt="A Strong Woman Coloring Book Cover" />
-        <h3>A Strong Woman: Coloring Book</h3>
-        <p><em>by Jordan Charles Lander</em></p>
-        <p>Paperback (Live since Oct 9, 2024) &ndash; $12.99 USD</p>
-        <p>ASIN: B0DJRDPTJJ &ndash; <a href="https://www.amazon.com/dp/B0DJRDPTJJ" target="_blank">View on Amazon</a></p>
-      </div>
-      <div class="book-item">
-        <img src="passiveaggressive.jpg" alt="Passive-Aggressive Office Notes Cover" />
-        <h3>Passive-Aggressive Office Notes: The Funny and Relatable Adult Coloring Book</h3>
-        <p><em>by Jordan Charles Lander</em></p>
-        <p>Paperback (Live since May 15, 2023) &ndash; $7.99 USD</p>
-        <p>ASIN: B0C52216QY &ndash; <a href="https://www.amazon.com/dp/B0C52216QY" target="_blank">View on Amazon</a></p>
-      </div>
+      <button class="carousel-btn next">&#10095;</button>
     </div>
     <p class="center-btn"><a href="https://www.amazon.com/stores/Jordan-Charles-Lander/author/B0C5TYWMDD" target="_blank" class="btn">Shop My Books</a></p>
   </section>
@@ -168,6 +172,34 @@
         header.classList.toggle('active');
       });
     });
+
+    // Book carousel functionality
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const items = document.querySelectorAll('.carousel-track .book-item');
+    let index = 0;
+
+    function updateCarousel() {
+      const itemWidth = items[0].offsetWidth + 16; // 16px gap
+      track.style.transform = `translateX(${-index * itemWidth}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (index < items.length - 1) {
+        index++;
+        updateCarousel();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (index > 0) {
+        index--;
+        updateCarousel();
+      }
+    });
+
+    window.addEventListener('resize', updateCarousel);
   </script>
 </body>
 </html>

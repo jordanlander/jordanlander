@@ -146,13 +146,21 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Books Grid */
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
+/* Books Carousel */
+.book-carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
-.book-grid .book-item {
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.carousel-track .book-item {
+  flex: 0 0 180px;
   background: #fafafa;
   padding: 1rem;
   border-radius: 6px;
@@ -160,15 +168,29 @@ body {
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
-.book-grid .book-item:hover {
+.carousel-track .book-item:hover {
   transform: translateY(-5px);
 }
-.book-grid img {
+.carousel-track img {
   width: 100%;
   height: auto;
   border-radius: 4px;
   margin-bottom: 0.5rem;
 }
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.carousel-btn.prev { left: 0.5rem; }
+.carousel-btn.next { right: 0.5rem; }
 
 /* Button */
 .btn {
