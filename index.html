@@ -201,13 +201,62 @@
 
   <!-- Interactive Scripts -->
   <script>
-    // Accordion functionality
+    // Accordion functionality with fade animation
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', () => {
         const body = header.nextElementSibling;
-        body.style.maxHeight = body.style.maxHeight ? null : body.scrollHeight + 'px';
+        if (body.style.maxHeight) {
+          body.style.maxHeight = null;
+          body.classList.remove('open');
+        } else {
+          body.style.maxHeight = body.scrollHeight + 'px';
+          body.classList.add('open');
+        }
         header.classList.toggle('active');
       });
     });
 
     // Book carousel functionality
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const items = document.querySelectorAll('.carousel-track .book-item');
+    let index = 0;
+
+    function updateCarousel() {
+      const itemWidth = items[0].offsetWidth + 16; // 16px gap
+      track.style.transform = `translateX(${-index * itemWidth}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (index < items.length - 1) {
+        index++;
+        updateCarousel();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (index > 0) {
+        index--;
+        updateCarousel();
+      }
+    });
+
+    window.addEventListener('resize', updateCarousel);
+
+    // Fade-in animations for images and media
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible', 'appear');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.book-item img, #media .accordion-item').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

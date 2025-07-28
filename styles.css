@@ -111,14 +111,6 @@ body {
 .accordion-header.active::after {
   content: '-';
 }
-.accordion-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  background: #fafafa;
-  padding: 0 1rem;
-  border-radius: 0 0 4px 4px;
-}
 .accordion-body ul {
   margin: 1rem 0;
   list-style: disc;
@@ -216,4 +208,44 @@ body {
   text-align: center;
   margin: 3rem 0;
   color: #666;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  background: #fafafa;
+  padding: 0 1rem;
+  border-radius: 0 0 4px 4px;
+}
+
+.accordion-body.open {
+  opacity: 1;
+}
+
+.media .accordion-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.media .accordion-item.appear {
+  animation: fadeInUp 0.6s forwards;
+}
+
+.book-item img {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.book-item img.visible {
+  opacity: 1;
+  transform: scale(1);
 }
