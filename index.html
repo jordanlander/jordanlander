@@ -11,7 +11,8 @@
   <!-- Header / Navigation -->
   <header class="header">
     <nav class="nav">
-      <ul class="nav-list">
+      <div class="nav-toggle" id="navToggle">&#9776;</div>
+      <ul class="nav-list" id="navList">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
@@ -284,6 +285,18 @@
 
   <!-- Interactive Scripts -->
   <script>
+    // Mobile navigation toggle
+    const navToggle = document.getElementById('navToggle');
+    const navList = document.getElementById('navList');
+
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav-list a').forEach(link => {
+      link.addEventListener('click', () => navList.classList.remove('open'));
+    });
+
     // Accordion functionality
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', () => {
