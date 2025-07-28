@@ -292,10 +292,8 @@
 
     navToggle.addEventListener('click', () => {
       navList.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav-list a').forEach(link => {
-      link.addEventListener('click', () => navList.classList.remove('open'));
+      navToggle.classList.toggle('open');
+      navToggle.innerHTML = navToggle.classList.contains('open') ? '&#10005;' : '&#9776;';
     });
 
     // Accordion functionality

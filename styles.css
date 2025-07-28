@@ -31,6 +31,10 @@ body {
   position: absolute;
   right: 1rem;
   top: 0.5rem;
+  transition: transform 0.3s ease;
+}
+.nav-toggle.open {
+  transform: rotate(90deg);
 }
 .nav-list {
   list-style: none;
@@ -268,12 +272,16 @@ body {
     left: 0;
     width: 100%;
     background: #0e2a47;
-    padding: 1rem 0;
-    display: none;
+    padding: 0;
+    margin-bottom: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
   }
 
   .nav-list.open {
-    display: flex;
+    padding: 1rem 0;
+    max-height: 500px;
   }
 
   .nav-toggle {
