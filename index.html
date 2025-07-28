@@ -288,7 +288,9 @@
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', () => {
         const body = header.nextElementSibling;
-        body.style.maxHeight = body.style.maxHeight ? null : body.scrollHeight + 'px';
+        const isOpen = body.classList.contains('open');
+        body.style.maxHeight = isOpen ? null : body.scrollHeight + 'px';
+        body.classList.toggle('open');
         header.classList.toggle('active');
       });
     });
