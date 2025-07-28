@@ -280,3 +280,37 @@ body {
     display: block;
   }
 }
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 10px;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-pic {
+    width: 120px;
+    margin-bottom: 1rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .carousel-btn {
+    display: none;
+  }
+  .carousel-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .carousel-track .book-item {
+    scroll-snap-align: start;
+  }
+}
