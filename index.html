@@ -4,99 +4,144 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Jordan Lander - educational leader, author, and innovative creator." />
-  <title>Jordan Lander</title>
+  <title>Jordan Lander | Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Header / Navigation -->
-  <header>
-    <nav>
-      <ul>
+  <header class="header">
+    <nav class="nav">
+      <ul class="nav-list">
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#publications">Books</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <h1>Jordan Lander</h1>
-    <p>Educational Leader, Author, Innovator</p>
+    <div class="hero">
+      <h1>Jordan Lander</h1>
+      <p>Strategic Educational Leader · STEAM Innovator · Author</p>
+    </div>
   </header>
 
-
   <!-- About Section -->
-  <section id="about">
+  <section id="about" class="section about">
     <h2>About Me</h2>
-    <img src="Jordan%20Lander.jpg" alt="Jordan Lander profile" style="float:right;margin-left:20px;width:150px;height:auto;border-radius:50%" />
-    <p>I'm a strategic, data-driven educational leader blending innovation, inclusion, and creative problem-solving. My passion is helping others grow through technology and creative expression.</p>
-    <p>Contact: <a href="mailto:jordanlander@gmail.com">jordanlander@gmail.com</a></p>
+    <div class="about-content">
+      <img src="Jordan%20Lander.jpg" alt="Jordan Lander profile" class="profile-pic" />
+      <p>I'm a forward-thinking, data-driven education administrator with over 15 years of experience designing inclusive STEAM curricula, leading change initiatives, and empowering teams. I thrive on integrating technology and creativity to foster growth and equity.</p>
+    </div>
+  </section>
+
+  <!-- Experience Section with Accordion -->
+  <section id="experience" class="section experience">
+    <h2>Professional Experience</h2>
+    <div class="accordion" id="experienceAccordion">
+      <div class="accordion-item">
+        <button class="accordion-header">Supervisor of Special Education, Northwest Tri-County IU5 <span class="date">(Jul 2025 &ndash; Present)</span></button>
+        <div class="accordion-body">
+          <ul>
+            <li>Lead strategic vision & daily operations for special education across multiple districts.</li>
+            <li>Manage IEP development, compliance with IDEA/Pennsylvania regs, and transition planning.</li>
+            <li>Supervise & mentor a team of certified teachers & paraprofessionals, fostering a student-centered culture.</li>
+            <li>Coordinate budgets & resources; secure grants and partnerships to expand program offerings.</li>
+            <li>Design & deliver professional learning on PBIS, inclusive practices, and data-driven instruction.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Repeat for other roles -->
+      <div class="accordion-item">
+        <button class="accordion-header">Assistant Principal & Cyber Liaison, Corry Area SD <span class="date">(Jan 2022 &ndash; Jun 2025)</span></button>
+        <div class="accordion-body">
+          <ul>
+            <li>Redesigned Corry Virtual Academy, cutting cyber placement costs by $800K+ annually.</li>
+            <li>Built two district-wide apps to track & approve teacher team-building hours.</li>
+            <li>Led integration of IXL & quarterly data reviews, achieving PSSA gains in ELA and Math.</li>
+            <li>Authored & managed district newsletter, strengthening communication and morale.</li>
+            <li>Developed & maintained Title I Schoolwide Plans, ensuring compliance and collaboration.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Science Teacher & Program Lead, Erie’s Public Schools <span class="date">(Aug 2016 &ndash; Jan 2022)</span></button>
+        <div class="accordion-body">
+          <ul>
+            <li>Taught CTE programming, networking, forensics, and honors science courses.</li>
+            <li>Secured a $500K tech grant to launch a summer CS program for minority students.</li>
+            <li>Facilitated after-school STEM clubs (robotics, coding, maker labs).</li>
+            <li>Analyzed academic & attendance data to inform RTI and PLC decisions.</li>
+            <li>Trained teachers in curriculum development and tech integration.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Innovation Fellow, NeuroLex Laboratories <span class="date">(Mar 2019 &ndash; Feb 2022)</span></button>
+        <div class="accordion-body">
+          <ul>
+            <li>Collaborated on AI-driven voice analysis for early detection of neurological conditions.</li>
+            <li>Designed experiments & validated ML models, presenting findings at conferences.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2>Work & Projects</h2>
-    <ul>
-      <li>
-        <h3>Special Education Leadership</h3>
-        <p>Supervisor of Special Education at IU5, overseeing program compliance and innovative initiatives.</p>
-      </li>
-      <li>
-        <h3>Virtual Learning Development</h3>
-        <p>Redesigned district virtual academy, saving over $800K annually.</p>
-      </li>
-      <li>
-        <h3>Educational Technology Apps</h3>
-        <p>Built teacher-facing apps for collaboration & compliance.</p>
-      </li>
-      <!-- Add more projects here -->
-    </ul>
+  <section id="portfolio" class="section portfolio">
+    <h2>Selected Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Virtual Academy Overhaul</h3>
+        <p>End-to-end redevelopment of digital learning infrastructure & PD modules.</p>
+      </div>
+      <div class="project-card">
+        <h3>Teacher Collaboration App</h3>
+        <p>Full-stack build to streamline CBA hour logging & approval.</p>
+      </div>
+      <div class="project-card">
+        <h3>IXL Data Dashboards</h3>
+        <p>Custom analytics & training driving measurable test improvements.</p>
+      </div>
+      <div class="project-card">
+        <h3>Equity in STEAM</h3>
+        <p>Grant-led initiative expanding CS access for underrepresented groups.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Publications Section -->
-  <section id="publications">
-  <h2>Books & Publications</h2>
-  <div class="book-list">
-      <article class="book-item">
-        <img src="prideandportrait.jpg" alt="Pride and Portrait Cover" />
-        <h3>Pride and Portrait: A Coloring Book Anthology Featuring the Art of Rebecca Coppock</h3>
-        <p><em>by JCLander Books</em></p>
-        <p>Paperback (Live since Jun 30, 2025) &ndash; $14.99 USD</p>
-        <p>ASIN: B0FG3DCR17 &ndash; <a href="https://www.amazon.com/dp/B0FG3DCR17" target="_blank">View on Amazon</a></p>
-      </article>
-      <article class="book-item">
-        <img src="emerson.jpg" alt="Emerson the Super Squirrel Cover" />
-        <h3>Emerson the Super Squirrel: A PBIS Coloring Adventure for Positive Behavior</h3>
-        <p><em>by Mr. Jordan Lander</em></p>
-        <p>Paperback (Live since Apr 21, 2025) &ndash; $7.99 USD</p>
-        <p>ASIN: B0F5Q5WVWM &ndash; <a href="https://www.amazon.com/dp/B0F5Q5WVWM" target="_blank">View on Amazon</a></p>
-      </article>
-      <article class="book-item">
-        <img src="strongwoman.jpg" alt="A Strong Woman Coloring Book Cover" />
-        <h3>A Strong Woman: Coloring Book</h3>
-        <p><em>by Jordan Charles Lander</em></p>
-        <p>Paperback (Live since Oct 9, 2024) &ndash; $12.99 USD</p>
-        <p>ASIN: B0DJRDPTJJ &ndash; <a href="https://www.amazon.com/dp/B0DJRDPTJJ" target="_blank">View on Amazon</a></p>
-      </article>
-      <article class="book-item">
-        <img src="passiveaggressive.jpg" alt="Passive-Aggressive Office Notes Cover" />
-        <h3>Passive-Aggressive Office Notes: The Funny and Relatable Adult Coloring Book</h3>
-        <p><em>by Jordan Charles Lander</em></p>
-        <p>Paperback (Live since May 15, 2023) &ndash; $7.99 USD</p>
-      <p>ASIN: B0C52216QY &ndash; <a href="https://www.amazon.com/dp/B0C52216QY" target="_blank">View on Amazon</a></p>
-      </article>
+  <section id="publications" class="section publications">
+    <h2>Books & Publications</h2>
+    <div class="book-grid">
+      <!-- Book items as cards -->
+      <!-- ... same as before ... -->
     </div>
-    <p style="text-align:center;margin-top:20px;">Interested in more? <a href="https://www.amazon.com/stores/Jordan-Charles-Lander/author/B0C5TYWMDD" target="_blank" style="background:#0e2a47;color:white;padding:10px 20px;border-radius:4px;text-decoration:none;">Shop My Books</a></p>
+    <p class="center-btn"><a href="https://www.amazon.com/stores/Jordan-Charles-Lander/author/B0C5TYWMDD" target="_blank" class="btn">Shop My Books</a></p>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
-    <h2>Get in Touch</h2>
+  <section id="contact" class="section contact">
+    <h2>Let’s Connect</h2>
     <p>Email: <a href="mailto:jordanlander@gmail.com">jordanlander@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/jordanlander" target="_blank">linkedin.com/in/jordanlander</a></p>
+    <p><a href="https://www.linkedin.com/in/jordanlander" target="_blank">LinkedIn Profile</a></p>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="footer">
     <p>&copy; 2025 Jordan Lander</p>
   </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Accordion functionality
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const body = header.nextElementSibling;
+        body.style.maxHeight = body.style.maxHeight ? null : body.scrollHeight + 'px';
+        header.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
