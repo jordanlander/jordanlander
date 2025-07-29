@@ -296,6 +296,17 @@
       navToggle.innerHTML = navToggle.classList.contains('open') ? '&#10005;' : '&#9776;';
     });
 
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.nav-list a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navList.classList.contains('open')) {
+          navList.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.innerHTML = '&#9776;';
+        }
+      });
+    });
+
     // Accordion functionality
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', () => {
