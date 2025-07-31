@@ -136,28 +136,28 @@
           <h3>Pride and Portrait: A Coloring Book Anthology Featuring the Art of Rebecca Coppock</h3>
           <p><em>by JCLander Books</em></p>
           <p>Paperback (Live since Jun 30, 2025) &ndash; $14.99 USD</p>
-          <p>ASIN: B0FG3DCR17 &ndash; <a href="https://www.amazon.com/dp/B0FG3DCR17" target="_blank">View on Amazon</a></p>
+          <p>ASIN: B0FG3DCR17 &ndash; <a href="https://www.amazon.com/dp/B0FG3DCR17" target="_blank" class="book-link" data-book="Pride and Portrait" data-asin="B0FG3DCR17">View on Amazon</a></p>
         </div>
         <div class="book-item">
           <img src="emerson.jpg" alt="Emerson the Super Squirrel Cover" />
           <h3>Emerson the Super Squirrel: A PBIS Coloring Adventure for Positive Behavior</h3>
           <p><em>by Mr. Jordan Lander</em></p>
           <p>Paperback (Live since Apr 21, 2025) &ndash; $7.99 USD</p>
-          <p>ASIN: B0F5Q5WVWM &ndash; <a href="https://www.amazon.com/dp/B0F5Q5WVWM" target="_blank">View on Amazon</a></p>
+          <p>ASIN: B0F5Q5WVWM &ndash; <a href="https://www.amazon.com/dp/B0F5Q5WVWM" target="_blank" class="book-link" data-book="Emerson the Super Squirrel" data-asin="B0F5Q5WVWM">View on Amazon</a></p>
         </div>
         <div class="book-item">
           <img src="strongwoman.jpg" alt="A Strong Woman Coloring Book Cover" />
           <h3>A Strong Woman: Coloring Book</h3>
           <p><em>by Jordan Charles Lander</em></p>
           <p>Paperback (Live since Oct 9, 2024) &ndash; $12.99 USD</p>
-          <p>ASIN: B0DJRDPTJJ &ndash; <a href="https://www.amazon.com/dp/B0DJRDPTJJ" target="_blank">View on Amazon</a></p>
+          <p>ASIN: B0DJRDPTJJ &ndash; <a href="https://www.amazon.com/dp/B0DJRDPTJJ" target="_blank" class="book-link" data-book="A Strong Woman" data-asin="B0DJRDPTJJ">View on Amazon</a></p>
         </div>
         <div class="book-item">
           <img src="passiveaggressive.jpg" alt="Passive-Aggressive Office Notes Cover" />
           <h3>Passive-Aggressive Office Notes: The Funny and Relatable Adult Coloring Book</h3>
           <p><em>by Jordan Charles Lander</em></p>
           <p>Paperback (Live since May 15, 2023) &ndash; $7.99 USD</p>
-          <p>ASIN: B0C52216QY &ndash; <a href="https://www.amazon.com/dp/B0C52216QY" target="_blank">View on Amazon</a></p>
+          <p>ASIN: B0C52216QY &ndash; <a href="https://www.amazon.com/dp/B0C52216QY" target="_blank" class="book-link" data-book="Passive-Aggressive Office Notes" data-asin="B0C52216QY">View on Amazon</a></p>
         </div>
       </div>
       <button class="carousel-btn next">&#10095;</button>
@@ -370,6 +370,16 @@
 
     document.querySelectorAll('.book-item img, #media .accordion-item').forEach(el => {
       observer.observe(el);
+    });
+
+    // Track clicks on Amazon links
+    document.querySelectorAll('.book-link').forEach(link => {
+      link.addEventListener('click', () => {
+        gtag('event', 'book_click', {
+          book_title: link.dataset.book,
+          book_asin: link.dataset.asin
+        });
+      });
     });
   </script>
 </body>
