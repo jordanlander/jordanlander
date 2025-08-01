@@ -62,17 +62,26 @@ body {
   color: #f5a623;
 }
 
-.hero {
+/* Hero */
+.hero-section {
   text-align: center;
   margin-bottom: 1rem;
+  background: linear-gradient(135deg, #1f2937, #4338ca, #6b21a8);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  position: relative;
+  overflow: hidden;
 }
-/* Hero */
-.hero h1 {
+.hero-section h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
-.hero p {
-  font-size: 1.2rem;
+.hero-section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.hero-section p {
+  font-size: 1.125rem;
   color: #ddd;
 }
 
@@ -302,10 +311,11 @@ body {
   body {
     padding: 0 10px;
   }
-  .hero h1 {
+  .hero-section h1 {
     font-size: 1.8rem;
   }
-  .hero p {
+  .hero-section p,
+  .hero-section h2 {
     font-size: 1rem;
   }
   .about-content {
