@@ -44,6 +44,7 @@ body {
   position: absolute;
   right: 1rem;
   top: 0.5rem;
+  color: #fff;
   transition: transform 0.3s ease;
 }
 
@@ -324,17 +325,22 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background: #0e2a47;
+    background: rgb(17 24 39 / 90%); /* bg-gray-900 bg-opacity-90 */
+    color: #fff;
     padding: 0;
     margin-bottom: 0;
     max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
   }
 
   .nav-list.open {
     padding: 1rem 0;
     max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .nav-toggle {
