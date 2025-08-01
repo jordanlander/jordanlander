@@ -32,9 +32,11 @@ body {
   margin-bottom: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   background: transparent;
   width: 100%;
+  min-height: 2.5rem;
 }
 
 .nav-toggle {
@@ -44,6 +46,7 @@ body {
   position: absolute;
   right: 1rem;
   top: 0.5rem;
+  z-index: 200;
   color: #0e2a47;
   transition: transform 0.3s ease;
 }
@@ -322,10 +325,11 @@ body {
     flex-direction: column;
     gap: 1rem;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 0.5rem);
     left: 0;
     width: 100%;
     background: rgb(17 24 39 / 90%); /* bg-gray-900 bg-opacity-90 */
+    z-index: 150;
     color: #fff;
     padding: 0;
     margin-bottom: 0;
