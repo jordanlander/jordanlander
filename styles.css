@@ -342,6 +342,15 @@ body {
   }
 }
 
+/* Cinematic Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #1f2937, #4338ca, #6b21a8);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
