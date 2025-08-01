@@ -416,3 +416,54 @@ body {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* Animated orbs for hero background */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.35;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.orb1 {
+  width: 14rem;
+  height: 14rem;
+  top: 10%;
+  left: 15%;
+  background: radial-gradient(circle at center, #a5b4fc, #6366f1);
+  animation: float1 18s ease-in-out infinite;
+}
+
+.orb2 {
+  width: 12rem;
+  height: 12rem;
+  bottom: 15%;
+  right: 20%;
+  background: radial-gradient(circle at center, #c084fc, #7c3aed);
+  animation: float2 16s ease-in-out infinite;
+}
+
+.orb3 {
+  width: 16rem;
+  height: 16rem;
+  top: 40%;
+  right: 30%;
+  background: radial-gradient(circle at center, #ddd6fe, #8b5cf6);
+  animation: float3 20s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -20px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, 25px); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-25px, -15px); }
+}
