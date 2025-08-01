@@ -15,17 +15,22 @@ body {
 
 /* Header and Navigation */
 .header {
-  background: #0e2a47;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   color: #fff;
   text-align: center;
-  padding: 0 1rem 2rem;
+  padding: 1rem 1rem 0;
+  z-index: 50;
+  background: transparent;
 }
 .nav {
-  margin-bottom: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #0e2a47;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background: transparent;
   width: 100%;
 }
 .nav-toggle {
@@ -325,4 +330,19 @@ body {
   .carousel-track .book-item {
     scroll-snap-align: start;
   }
+}
+
+/* Cinematic Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #1f2937, #4338ca, #6b21a8);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

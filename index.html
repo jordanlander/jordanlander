@@ -19,10 +19,13 @@
   <title>Jordan Lander | Portfolio</title>
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/framer-motion@12.23.12/dist/framer-motion.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header / Navigation -->
+  <!-- Navigation -->
   <header class="header">
     <nav class="nav">
       <div class="nav-toggle" id="navToggle">&#9776;</div>
@@ -35,11 +38,8 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="hero">
-      <h1>Jordan Lander</h1>
-      <p>Strategic Educational Leader · STEAM Innovator · Author</p>
-    </div>
   </header>
+  <div id="hero-react"></div>
 
   <!-- About Section -->
   <section id="about" class="section about">
@@ -307,6 +307,50 @@
   <footer class="footer">
     <p>&copy; 2025 Jordan Lander</p>
   </footer>
+
+  <script type="text/javascript">
+    const { motion } = window["framerMotion"] || window;
+    function Hero() {
+      const container = {
+        hidden: {},
+        show: {
+          transition: { staggerChildren: 0.25 }
+        }
+      };
+      const item = {
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+      };
+      return React.createElement(
+        motion.section,
+        {
+          className:
+            "hero-section min-h-screen flex flex-col items-center justify-center text-center px-4",
+          variants: container,
+          initial: "hidden",
+          animate: "show"
+        },
+        [
+          React.createElement(
+            motion.h1,
+            { key: "h1", className: "text-5xl md:text-7xl font-bold text-white mb-4", variants: item },
+            "Jordan Lander"
+          ),
+          React.createElement(
+            motion.h2,
+            { key: "h2", className: "text-xl md:text-2xl font-semibold text-white mb-4", variants: item },
+            "Strategic Educator | Innovator | Community Builder"
+          ),
+          React.createElement(
+            motion.p,
+            { key: "p", className: "max-w-xl text-white text-lg md:text-xl", variants: item },
+            "Passionate about equity in education, digital transformation, and turning bold ideas into systems that work."
+          )
+        ]
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("hero-react")).render(React.createElement(Hero));
+  </script>
 
   <!-- Interactive Scripts -->
   <script>
