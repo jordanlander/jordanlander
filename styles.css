@@ -10,20 +10,22 @@ body {
   line-height: 1.6;
   color: #333;
   background: #f4f4f4;
-  padding: 0 20px;
+  padding: 4rem 20px 0;
 }
 
 /* Header and Navigation */
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   color: #fff;
   text-align: center;
-  padding: 1rem 1rem 0;
-  z-index: 50;
-  background: transparent;
+  padding: 0.75rem 1rem;
+  z-index: 100;
+  background: rgba(14, 42, 71, 0.9);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .nav {
   margin-bottom: 0;
@@ -71,18 +73,22 @@ body {
   animation: gradientShift 15s ease infinite;
   position: relative;
   overflow: hidden;
+  padding-top: 4rem;
 }
 .hero-section h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
 }
 .hero-section h2 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
 }
 .hero-section p {
   font-size: 1.125rem;
   color: #ddd;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
 }
 
 /* Sections */
@@ -309,14 +315,16 @@ body {
 
 @media (max-width: 480px) {
   body {
-    padding: 0 10px;
+    padding: 4rem 10px 0;
   }
   .hero-section h1 {
     font-size: 1.8rem;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
   }
   .hero-section p,
   .hero-section h2 {
     font-size: 1rem;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
   }
   .about-content {
     flex-direction: column;
@@ -340,15 +348,6 @@ body {
   .carousel-track .book-item {
     scroll-snap-align: start;
   }
-}
-
-/* Cinematic Hero Section */
-.hero-section {
-  background: linear-gradient(135deg, #1f2937, #4338ca, #6b21a8);
-  background-size: 200% 200%;
-  animation: gradientShift 15s ease infinite;
-  position: relative;
-  overflow: hidden;
 }
 
 @keyframes gradientShift {
