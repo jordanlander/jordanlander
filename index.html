@@ -331,51 +331,64 @@
           animate: "show"
         },
         [
-          React.createElement(
-            "div",
-            {
-              key: "orbs",
-              className:
-                "absolute inset-0 pointer-events-none z-0 overflow-hidden",
-            },
-            [
-              React.createElement("span", { key: "o1", className: "orb orb1" }),
-              React.createElement("span", { key: "o2", className: "orb orb2" }),
-              React.createElement("span", { key: "o3", className: "orb orb3" })
-            ]
-          ),
-          React.createElement(
-            motion.h1,
-React.createElement(
-  motion.h1,
-  {
-    key: "h1",
-    className: "text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4",
-    variants: item,
-  },
-  "Jordan Lander"
-),
-React.createElement(
-  motion.h2,
-  {
-    key: "h2",
-    className: "text-lg sm:text-xl md:text-2xl font-semibold text-white mb-4",
-    variants: item,
-  },
-  "Strategic Educator | Innovator | Community Builder"
-),
-React.createElement(
-  motion.p,
-  {
-    key: "p",
-    className: "max-w-xl text-white text-base sm:text-lg md:text-xl",
-    variants: item,
-  },
-  "Passionate about equity in education, digital transformation, and turning bold ideas into systems that work."
-)
-            "Passionate about equity in education, digital transformation, and turning bold ideas into systems that work."
-          )
-        ]
+            React.createElement(
+              "video",
+              {
+                key: "video",
+                className: "hero-video absolute inset-0 w-full h-full object-cover z-0 hidden sm:block",
+                autoPlay: true,
+                loop: true,
+                muted: true,
+                playsInline: true,
+                "aria-hidden": true
+              },
+              React.createElement("source", {
+                src: "hero-video.mp4",
+                type: "video/mp4"
+              })
+            ),
+            React.createElement(
+              "div",
+              {
+                key: "overlay",
+                className: "hero-overlay absolute inset-0 bg-black bg-opacity-60 z-10",
+                "aria-hidden": true,
+              }
+            ),
+            React.createElement(
+              "div",
+              { key: "content", className: "relative z-20 flex flex-col items-center" },
+              [
+                React.createElement(
+                  motion.h1,
+                  {
+                    key: "h1",
+                    className: "text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4",
+                    variants: item,
+                  },
+                  "Jordan Lander"
+                ),
+                React.createElement(
+                  motion.h2,
+                  {
+                    key: "h2",
+                    className: "text-lg sm:text-xl md:text-2xl font-semibold text-white mb-4",
+                    variants: item,
+                  },
+                  "Strategic Educator | Innovator | Community Builder"
+                ),
+                React.createElement(
+                  motion.p,
+                  {
+                    key: "p",
+                    className: "max-w-xl text-white text-base sm:text-lg md:text-xl",
+                    variants: item,
+                  },
+                  "Passionate about equity in education, digital transformation, and turning bold ideas into systems that work."
+                ),
+              ]
+            ),
+          ]
       );
     }
     ReactDOM.createRoot(document.getElementById("hero-react")).render(React.createElement(Hero));
