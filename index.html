@@ -61,16 +61,8 @@
     </ul>
   </section>
 
-  <!-- Experience Timeline -->
-  <section id="experience" class="py-12 bg-[#0e2a47] text-indigo-100">
-    <div class="max-w-3xl mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-8 text-white">Experience</h2>
-      <div id="timeline-root" class="relative border-l-2 border-indigo-400"></div>
-    </div>
-  </section>
-
   <!-- Experience Section with Accordion -->
-  <section id="experience-details" class="section experience">
+  <section id="experience" class="section experience">
     <h2>Professional Experience</h2>
     <div class="accordion" id="experienceAccordion">
       <div class="accordion-item">
@@ -400,82 +392,6 @@
       );
     }
     ReactDOM.createRoot(document.getElementById("hero-react")).render(React.createElement(Hero));
-  </script>
-
-  <script>
-    const timelineItems = [
-      {
-        year: "2025 – Present",
-        title: "Supervisor of Special Education",
-        description: "Guiding district-wide special education initiatives",
-      },
-      {
-        year: "2022 – 2025",
-        title: "Assistant Principal & Cyber Liaison",
-        description: "Revamped virtual academy and boosted performance",
-      },
-      {
-        year: "2019 – 2022",
-        title: "Innovation Fellow, NeuroLex Laboratories",
-        description: "Explored AI-driven voice diagnostics",
-      },
-      {
-        year: "2016 – 2022",
-        title: "Science Teacher & Program Lead",
-        description: "Launched STEM programs and secured grants",
-      },
-    ];
-
-    function ExperienceTimeline() {
-      return React.createElement(
-        "div",
-        { className: "relative border-l-2 border-indigo-400" },
-        timelineItems.map((item, idx) =>
-          React.createElement(
-            motion.div,
-            {
-              key: idx,
-              className: "mb-10 ml-6",
-              initial: { opacity: 0, x: -50 },
-              whileInView: { opacity: 1, x: 0 },
-              transition: { duration: 0.6 },
-              viewport: { once: true },
-            },
-            [
-              React.createElement("span", {
-                className:
-                  "absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-400 rounded-full ring-8 ring-[#0e2a47]",
-              }),
-              React.createElement(
-                "div",
-                { className: "p-4 bg-[#132e4e] rounded-lg shadow" },
-                [
-                  React.createElement(
-                    "h3",
-                    { className: "text-lg font-semibold text-white" },
-                    item.title
-                  ),
-                  React.createElement(
-                    "p",
-                    { className: "text-sm text-indigo-200" },
-                    item.year
-                  ),
-                  React.createElement(
-                    "p",
-                    { className: "text-sm mt-1 text-indigo-100" },
-                    item.description
-                  ),
-                ]
-              ),
-            ]
-          )
-        )
-      );
-    }
-
-    ReactDOM.createRoot(document.getElementById("timeline-root")).render(
-      React.createElement(ExperienceTimeline)
-    );
   </script>
 
   <!-- Interactive Scripts -->
