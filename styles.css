@@ -222,6 +222,17 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
+.project-card h3 a {
+  color: #0e2a47;
+  text-decoration: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.project-card h3 a:hover {
+  text-decoration: underline;
+}
+
 /* Books Carousel */
 .book-carousel {
   position: relative;
